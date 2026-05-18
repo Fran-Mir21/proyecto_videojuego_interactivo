@@ -10,6 +10,7 @@ const TIEMPO_INICIAL = 60;
 const JuegoSSD = () => {
 const [indice, setIndice] = useState(0);
 const [puntaje, setPuntaje] = useState(0);
+const [vidas, setVidas] = useState(3);
 const [terminado, setTerminado] = useState(false);
 const [tiempo, setTiempo] = useState(TIEMPO_INICIAL);
 
@@ -39,8 +40,19 @@ useEffect(() => {
 }, [indice, tiempo, terminado]);
 
 const verificarRespuesta = (opcion) => {
+    if (vidas - 1 <= 0 && opcion !== preguntaActual.respuesta) {
+    setTerminado(true);
+    return;
+    }
+
     if (opcion === preguntaActual.respuesta) {
-    setPuntaje((prevPuntaje) => prevPuntaje + 1);
+    setPuntaje((prevPuntaje) =>
+        prevPuntaje + 1
+    );
+    } else {
+    setVidas((prevVidas) =>
+        prevVidas - 1
+    );
     }
 
     const siguienteIndice = indice + 1;
@@ -56,6 +68,7 @@ const verificarRespuesta = (opcion) => {
 const reiniciarJuego = () => {
     setIndice(0);
     setPuntaje(0);
+    setVidas(3);
     setTiempo(TIEMPO_INICIAL);
     setTerminado(false);
 };
@@ -74,6 +87,9 @@ return (
     <div className="juego">
     <h1>Juego SSD</h1>
     <h3 className="temporizador">Tiempo restante: {tiempo} segundos</h3>
+    <h3 className="vidas">
+        Vidas: {"❤️".repeat(vidas)}
+    </h3>
     <Pregunta
         preguntaActual={preguntaActual}
         verificarRespuesta={verificarRespuesta}
