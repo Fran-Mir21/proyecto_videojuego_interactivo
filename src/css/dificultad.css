@@ -1,0 +1,53 @@
+.dificultad {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.dificultad h1 {
+    margin-bottom: 40px;
+    font-size: 45px;
+}
+
+.botones-dificultad {
+    display: flex;
+    gap: 20px;
+}
+
+.botones-dificultad button {
+    padding: 18px 30px;
+
+    border: none;
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.botones-dificultad button:hover {
+    transform: scale(1.08);
+}
+
+.facil {
+    background-color: #22c55e;
+}
+
+.normal {
+    background-color: #f59e0b;
+}
+
+.dificil {
+    background-color: #ef4444;
+}

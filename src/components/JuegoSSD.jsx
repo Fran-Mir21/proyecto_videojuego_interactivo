@@ -1,100 +1,314 @@
 import { useEffect, useState } from "react";
 
 import "../css/juego.css";
-import { preguntasSSD } from "../Preguntas";
+
+import {
+
+    preguntasSSDFacil,
+
+    preguntasSSDNormal,
+
+    preguntasSSDDificil
+
+} from "../Preguntas";
+
 import Pregunta from "./Pregunta";
 import Resultado from "./Resultado";
 
-const TIEMPO_INICIAL = 60;
+const configuracion = {
 
-const JuegoSSD = () => {
-const [indice, setIndice] = useState(0);
-const [puntaje, setPuntaje] = useState(0);
-const [vidas, setVidas] = useState(3);
-const [terminado, setTerminado] = useState(false);
-const [tiempo, setTiempo] = useState(TIEMPO_INICIAL);
+    facil: {
+        tiempo: 60,
+        vidas: 5
+    },
 
-const preguntaActual = preguntasSSD[indice];
+    normal: {
+        tiempo: 40,
+        vidas: 3
+    },
+
+    dificil: {
+        tiempo: 20,
+        vidas: 1
+    }
+};
+
+const JuegoSSD = ({
+    dificultad
+}) => {
+
+const preguntas = {
+
+    facil:
+        preguntasSSDFacil,
+
+    normal:
+        preguntasSSDNormal,
+
+    dificil:
+        preguntasSSDDificil
+};
+
+const TIEMPO_INICIAL =
+
+    configuracion[
+        dificultad
+    ].tiempo;
+
+const [indice, setIndice] =
+    useState(0);
+
+const [puntaje, setPuntaje] =
+    useState(0);
+
+const [vidas, setVidas] =
+
+    useState(
+
+        configuracion[
+            dificultad
+        ].vidas
+    );
+
+const [terminado, setTerminado] =
+    useState(false);
+
+const [tiempo, setTiempo] =
+    useState(TIEMPO_INICIAL);
+
+const preguntaActual =
+
+    preguntas[
+        dificultad
+    ][indice];
 
 useEffect(() => {
+
     if (terminado) return;
 
     if (tiempo === 0) {
-    const siguienteIndice = indice + 1;
 
-    if (siguienteIndice < preguntasSSD.length) {
-        setIndice(siguienteIndice);
-        setTiempo(TIEMPO_INICIAL);
-    } else {
-        setTerminado(true);
+        const siguienteIndice =
+            indice + 1;
+
+        if (
+
+            siguienteIndice <
+
+            preguntas[
+                dificultad
+            ].length
+
+        ) {
+
+            setIndice(
+                siguienteIndice
+            );
+
+            setTiempo(
+                TIEMPO_INICIAL
+            );
+
+        } else {
+
+            setTerminado(true);
+        }
+
+        return;
     }
 
-    return;
-    }
+    const intervalo = setInterval(
+        () => {
 
-    const intervalo = setInterval(() => {
-    setTiempo((prevTiempo) => prevTiempo - 1);
+        setTiempo(
+            (prevTiempo) =>
+
+                prevTiempo - 1
+        );
+
     }, 1000);
 
-    return () => clearInterval(intervalo);
-}, [indice, tiempo, terminado]);
+    return () =>
+        clearInterval(intervalo);
 
-const verificarRespuesta = (opcion) => {
-    if (vidas - 1 <= 0 && opcion !== preguntaActual.respuesta) {
-    setTerminado(true);
-    return;
+}, [
+
+    indice,
+
+    tiempo,
+
+    terminado,
+
+    dificultad,
+
+    TIEMPO_INICIAL,
+
+    preguntas
+]);
+
+const verificarRespuesta =
+(opcion) => {
+
+    if (
+
+        vidas - 1 <= 0 &&
+
+        opcion !==
+        preguntaActual.respuesta
+
+    ) {
+
+        setTerminado(true);
+
+        return;
     }
 
-    if (opcion === preguntaActual.respuesta) {
-    setPuntaje((prevPuntaje) =>
-        prevPuntaje + 1
-    );
+    if (
+
+        opcion ===
+        preguntaActual.respuesta
+
+    ) {
+
+        setPuntaje(
+
+            (prevPuntaje) =>
+
+                prevPuntaje + 1
+        );
+
     } else {
-    setVidas((prevVidas) =>
-        prevVidas - 1
-    );
+
+        setVidas(
+
+            (prevVidas) =>
+
+                prevVidas - 1
+        );
     }
 
-    const siguienteIndice = indice + 1;
+    const siguienteIndice =
+        indice + 1;
 
-    if (siguienteIndice < preguntasSSD.length) {
-    setIndice(siguienteIndice);
-    setTiempo(TIEMPO_INICIAL);
+    if (
+
+        siguienteIndice <
+
+        preguntas[
+            dificultad
+        ].length
+
+    ) {
+
+        setIndice(siguienteIndice);
+
+        setTiempo(
+            TIEMPO_INICIAL
+        );
+
     } else {
-    setTerminado(true);
+
+        setTerminado(true);
     }
 };
 
 const reiniciarJuego = () => {
+
     setIndice(0);
+
     setPuntaje(0);
-    setVidas(3);
-    setTiempo(TIEMPO_INICIAL);
+
+    setVidas(
+
+        configuracion[
+            dificultad
+        ].vidas
+    );
+
+    setTiempo(
+        TIEMPO_INICIAL
+    );
+
     setTerminado(false);
 };
 
 if (terminado) {
+
     return (
+
     <Resultado
+
         puntaje={puntaje}
-        total={preguntasSSD.length}
-        reiniciarJuego={reiniciarJuego}
+
+        total={
+            preguntas[
+                dificultad
+            ].length
+        }
+
+        reiniciarJuego={
+            reiniciarJuego
+        }
     />
+
     );
 }
 
 return (
+
     <div className="juego">
-    <h1>Juego SSD</h1>
-    <h3 className="temporizador">Tiempo restante: {tiempo} segundos</h3>
-    <h3 className="vidas">
-        Vidas: {"❤️".repeat(vidas)}
-    </h3>
-    <Pregunta
-        preguntaActual={preguntaActual}
-        verificarRespuesta={verificarRespuesta}
-    />
-    <p className="puntaje">Puntaje: {puntaje}</p>
+
+        <h1>
+            Juego SSD
+        </h1>
+
+        <h2>
+            Dificultad:
+            {" "}
+            {dificultad}
+        </h2>
+
+        <h3 className="temporizador">
+
+            Tiempo restante:
+            {" "}
+
+            {tiempo}
+
+            {" "}
+            segundos
+
+        </h3>
+
+        <h3 className="vidas">
+
+            Vidas:
+            {" "}
+
+            {"❤️".repeat(vidas)}
+
+        </h3>
+
+        <Pregunta
+
+            preguntaActual={
+                preguntaActual
+            }
+
+            verificarRespuesta={
+                verificarRespuesta
+            }
+        />
+
+        <p className="puntaje">
+
+            Puntaje:
+            {" "}
+
+            {puntaje}
+
+        </p>
+
     </div>
 );
 };

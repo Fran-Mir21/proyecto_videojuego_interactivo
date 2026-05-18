@@ -3,11 +3,13 @@ import { useState } from "react";
 import Menu from "./components/Menu";
 import JuegoHDD from "./components/JuegoHDD";
 import JuegoSSD from "./components/JuegoSSD";
+import Dificultad from "./components/Dificultad";
 
 const App = () => {
 
-    const [pantalla, setPantalla] =
-        useState("menu");
+    const [pantalla, setPantalla] = useState("menu");
+
+    const [dificultad, setDificultad] = useState("");
 
     return (
 
@@ -21,15 +23,43 @@ const App = () => {
 
             )}
 
+            {pantalla === "dificultadHDD" && (
+
+                <Dificultad
+                    setPantalla={setPantalla}
+                    setDificultad={
+                        setDificultad
+                    }
+                    modo="hdd"
+                />
+
+            )}
+
+            {pantalla === "dificultadSSD" && (
+
+                <Dificultad
+                    setPantalla={setPantalla}
+                    setDificultad={
+                        setDificultad
+                    }
+                    modo="ssd"
+                />
+
+            )}
+
             {pantalla === "hdd" && (
 
-                <JuegoHDD />
+                <JuegoHDD
+                    dificultad={dificultad}
+                />
 
             )}
 
             {pantalla === "ssd" && (
 
-                <JuegoSSD />
+                <JuegoSSD
+                    dificultad={dificultad}
+                />
 
             )}
 

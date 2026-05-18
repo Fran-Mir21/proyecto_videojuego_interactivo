@@ -22,7 +22,9 @@ const Menu = ({ setPantalla }) => {
 
                 <button
                     onClick={() =>
-                        setPantalla("hdd")
+                        setPantalla(
+                            "dificultadHDD"
+                        )
                     }
                 >
                     Juego HDD
@@ -30,7 +32,9 @@ const Menu = ({ setPantalla }) => {
 
                 <button
                     onClick={() =>
-                        setPantalla("ssd")
+                        setPantalla(
+                            "dificultadSSD"
+                        )
                     }
                 >
                     Juego SSD
