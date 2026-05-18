@@ -1,0 +1,39 @@
+.resultado {
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 40px;
+    background-color: #1e293b;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+}
+
+.resultado h1 {
+    margin-bottom: 20px;
+}
+
+.resultado h2 {
+    margin-bottom: 15px;
+}
+
+.resultado p {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.resultado button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.resultado button:hover {
+    background-color: #1d4ed8;
+    transform: scale(1.05);
+}

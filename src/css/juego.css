@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0f172a;
+    color: white;
+}
+
+.juego {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #1e293b;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.juego h1 {
+    margin-bottom: 20px;
+}
+
+.pregunta h2 {
+    margin-bottom: 25px;
+}
+
+.opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.opciones button {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.opciones button:hover {
+    background-color: #1d4ed8;
+    transform: scale(1.03);
+}
+
+.resultado {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.temporizador {
+    margin-top: 15px;
+    margin-bottom: 25px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    color: #facc15;
+
+    background-color: #0f172a;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    display: inline-block;
+
+    border: 2px solid #facc15;
+}
+
+.puntaje {
+    margin-top: 25px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #38bdf8;
+}
