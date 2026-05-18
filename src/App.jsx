@@ -51,6 +51,7 @@ const App = () => {
 
                 <JuegoHDD
                     dificultad={dificultad}
+                    setPantalla={setPantalla}
                 />
 
             )}
@@ -59,6 +60,7 @@ const App = () => {
 
                 <JuegoSSD
                     dificultad={dificultad}
+                    setPantalla={setPantalla}
                 />
 
             )}

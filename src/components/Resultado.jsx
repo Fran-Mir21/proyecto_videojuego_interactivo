@@ -3,8 +3,31 @@ import "../css/resultado.css";
 const Resultado = ({
     puntaje,
     total,
-    reiniciarJuego
+    reiniciarJuego,
+    volverMenu
 }) => {
+
+    let nota = "";
+
+    const porcentaje =
+        (puntaje / total) * 100;
+
+    if (porcentaje === 100) {
+
+        nota = "EXPERTO";
+
+    } else if (porcentaje >= 70) {
+
+        nota = "MUY BIEN";
+
+    } else if (porcentaje >= 50) {
+
+        nota = "REGULAR";
+
+    } else {
+
+        nota = "DEBES MEJORAR";
+    }
 
     return (
 
@@ -24,10 +47,22 @@ const Resultado = ({
                 {total}
             </p>
 
+            <h3>
+                Nivel:
+                {" "}
+                {nota}
+            </h3>
+
             <button
                 onClick={reiniciarJuego}
             >
                 Volver a jugar
+            </button>
+
+            <button
+            className="btn-menu" onClick={volverMenu}
+            >
+                Volver al menú
             </button>
 
         </div>

@@ -34,7 +34,8 @@ const configuracion = {
 };
 
 const JuegoHDD = ({
-    dificultad
+    dificultad,
+    setPantalla
 }) => {
 
 const preguntas = {
@@ -232,6 +233,11 @@ const reiniciarJuego = () => {
     setTerminado(false);
 };
 
+const volverMenu = () => {
+
+    setPantalla("menu");
+};
+
 if (terminado) {
 
     return (
@@ -249,6 +255,9 @@ if (terminado) {
         reiniciarJuego={
             reiniciarJuego
         }
+        volverMenu={
+            volverMenu
+        }
     />
 
     );
@@ -261,6 +270,23 @@ return (
         <h1>
             Juego HDD
         </h1>
+
+        <p className="progreso">
+
+            Pregunta
+            {" "}
+
+            {indice + 1}
+
+            {" / "}
+
+            {
+                preguntas[
+                    dificultad
+                ].length
+            }
+
+        </p>
 
         <h2>
             Dificultad:
