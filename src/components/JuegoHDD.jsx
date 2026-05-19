@@ -2,6 +2,11 @@ import { useEffect, useState } from "react";
 
 import "../css/juego.css";
 
+import sonidoCorrecto from "../assets/sounds/dragon-studio-correct-472358.mp3";
+import sonidoIncorrecto from "../assets/sounds/u_n2rdb8hxnh-incorrect-293358.mp3";
+import sonidoGameOver from "../assets/sounds/dragon-studio-thud-sound-effect-405470.mp3";
+import sonidoWin from "../assets/sounds/metal slug mission complete tono.mp3";
+
 import {
 
     preguntasHDDFacil,
@@ -14,6 +19,12 @@ import {
 
 import Pregunta from "./Pregunta";
 import Resultado from "./Resultado";
+
+const playSound = (src) => {
+    const audio = new Audio(src);
+    audio.currentTime = 0;
+    audio.play().catch(() => {});
+};
 
 const configuracion = {
 
@@ -159,6 +170,8 @@ const verificarRespuesta =
 
     ) {
 
+        playSound(sonidoGameOver);
+
         setTerminado(true);
 
         return;
@@ -171,6 +184,8 @@ const verificarRespuesta =
 
     ) {
 
+        playSound(sonidoCorrecto);
+
         setPuntaje(
 
             (prevPuntaje) =>
@@ -179,6 +194,8 @@ const verificarRespuesta =
         );
 
     } else {
+
+        playSound(sonidoIncorrecto);
 
         setVidas(
 
@@ -208,6 +225,13 @@ const verificarRespuesta =
         );
 
     } else {
+
+        if (
+            opcion ===
+            preguntaActual.respuesta
+        ) {
+            playSound(sonidoWin);
+        }
 
         setTerminado(true);
     }
