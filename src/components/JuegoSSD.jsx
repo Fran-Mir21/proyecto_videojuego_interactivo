@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import "../css/juego.css";
 
+import mezclarArray from "../utils/mezclar";
 import sonidoCorrecto from "../assets/sounds/dragon-studio-correct-472358.mp3";
 import sonidoIncorrecto from "../assets/sounds/u_n2rdb8hxnh-incorrect-293358.mp3";
 import sonidoGameOver from "../assets/sounds/dragon-studio-thud-sound-effect-405470.mp3";
@@ -49,7 +50,7 @@ const JuegoSSD = ({
     setPantalla
 }) => {
 
-const preguntas = {
+const preguntasBase = {
 
     facil:
         preguntasSSDFacil,
@@ -88,11 +89,11 @@ const [terminado, setTerminado] =
 const [tiempo, setTiempo] =
     useState(TIEMPO_INICIAL);
 
-const preguntaActual =
+const [preguntas, setPreguntas] =
+    useState([]);
 
-    preguntas[
-        dificultad
-    ][indice];
+const preguntaActual =
+    preguntas[indice];
 
 useEffect(() => {
 
@@ -107,9 +108,7 @@ useEffect(() => {
 
             siguienteIndice <
 
-            preguntas[
-                dificultad
-            ].length
+            preguntas.length
 
         ) {
 
@@ -158,6 +157,32 @@ useEffect(() => {
     preguntas
 ]);
 
+useEffect(() => {
+
+    const preguntasMezcladas =
+
+        mezclarArray(
+
+            preguntasBase[
+                dificultad
+            ]
+        ).map((pregunta) => ({
+
+            ...pregunta,
+
+            opciones:
+
+                mezclarArray(
+                    pregunta.opciones
+                )
+        }));
+
+    setPreguntas(
+        preguntasMezcladas
+    );
+
+}, [dificultad]);
+
 const verificarRespuesta =
 (opcion) => {
 
@@ -166,7 +191,7 @@ const verificarRespuesta =
         vidas - 1 <= 0 &&
 
         opcion !==
-        preguntaActual.respuesta
+        preguntaActual.correcta
 
     ) {
 
@@ -180,7 +205,7 @@ const verificarRespuesta =
     if (
 
         opcion ===
-        preguntaActual.respuesta
+        preguntaActual.correcta
 
     ) {
 
@@ -212,9 +237,7 @@ const verificarRespuesta =
 
         siguienteIndice <
 
-        preguntas[
-            dificultad
-        ].length
+        preguntas.length
 
     ) {
 
@@ -228,7 +251,7 @@ const verificarRespuesta =
 
         if (
             opcion ===
-            preguntaActual.respuesta
+            preguntaActual.correcta
         ) {
             playSound(sonidoWin);
         }
@@ -262,6 +285,11 @@ const volverMenu = () => {
     setPantalla("menu");
 };
 
+if (!preguntaActual) {
+
+    return null;
+}
+
 if (terminado) {
 
     return (
@@ -271,9 +299,7 @@ if (terminado) {
         puntaje={puntaje}
 
         total={
-            preguntas[
-                dificultad
-            ].length
+            preguntas.length
         }
 
         reiniciarJuego={
@@ -305,9 +331,7 @@ return (
             {" / "}
 
             {
-                preguntas[
-                    dificultad
-                ].length
+                preguntas.length
             }
 
         </p>

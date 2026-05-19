@@ -40,8 +40,12 @@ const Menu = ({ setPantalla }) => {
                     Juego SSD
                 </button>
 
-                <button>
-                    Quiz Final
+                <button
+                onClick={() =>
+                    setPantalla("quizFinal")
+                    }
+                >
+                    ⚔️ Quiz Final
                 </button>
 
             </div>

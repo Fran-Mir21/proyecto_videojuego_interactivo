@@ -3,6 +3,7 @@ import { useState } from "react";
 import Menu from "./components/Menu";
 import JuegoHDD from "./components/JuegoHDD";
 import JuegoSSD from "./components/JuegoSSD";
+import QuizFinal from "./components/QuizFinal";
 import Dificultad from "./components/Dificultad";
 
 const App = () => {
@@ -60,6 +61,14 @@ const App = () => {
 
                 <JuegoSSD
                     dificultad={dificultad}
+                    setPantalla={setPantalla}
+                />
+
+            )}
+
+            {pantalla === "quizFinal" && (
+
+                <QuizFinal
                     setPantalla={setPantalla}
                 />
 

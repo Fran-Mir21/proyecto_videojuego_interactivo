@@ -1,288 +1,623 @@
 const preguntasHDDFacil = [
 
     {
-        pregunta:
-            "¿Qué significa HDD?",
-
+        pregunta: "¿Qué significa la sigla HDD?",
         opciones: [
             "Hard Disk Drive",
-            "High Data Disk",
-            "Hardware Digital Drive",
-            "Heavy Disk Driver"
+            "High Density Disk",
+            "Hardware Data Drive",
+            "Hyper Disk Drive"
         ],
-
-        respuesta:
-            "Hard Disk Drive"
+        correcta: "Hard Disk Drive"
     },
 
     {
-        pregunta:
-            "¿Cuál utiliza partes mecánicas?",
-
+        pregunta: "¿En qué se basa el almacenamiento de un HDD?",
         opciones: [
-            "SSD",
-            "HDD",
-            "Ambos",
-            "Ninguno"
+            "Microchips",
+            "Magnetismo",
+            "Luz láser",
+            "Memoria RAM"
         ],
-
-        respuesta:
-            "HDD"
+        correcta: "Magnetismo"
     },
 
     {
-        pregunta:
-            "¿Qué almacenamiento suele ser más barato?",
-
+        pregunta: "¿Qué componente gira dentro de un HDD?",
         opciones: [
-            "SSD",
-            "HDD",
-            "Ambos cuestan igual",
-            "Ninguno"
+            "Cabezal",
+            "Platos",
+            "Memoria",
+            "Cable SATA"
         ],
+        correcta: "Platos"
+    },
 
-        respuesta:
-            "HDD"
+    {
+        pregunta: "¿Qué componente lee y escribe datos?",
+        opciones: [
+            "Motor",
+            "Cabezal",
+            "Clúster",
+            "Sector"
+        ],
+        correcta: "Cabezal"
+    },
+
+    {
+        pregunta: "¿Qué es un plato en un HDD?",
+        opciones: [
+            "Disco físico interno",
+            "Cable",
+            "Memoria",
+            "Partición"
+        ],
+        correcta: "Disco físico interno"
+    },
+
+    {
+        pregunta: "¿Qué es una pista?",
+        opciones: [
+            "Circunferencia del disco",
+            "Tipo de RAM",
+            "Partición",
+            "Cable"
+        ],
+        correcta: "Circunferencia del disco"
+    },
+
+    {
+        pregunta: "¿Qué es un sector?",
+        opciones: [
+            "División de una pista",
+            "Tipo de disco",
+            "Memoria",
+            "Cabezal"
+        ],
+        correcta: "División de una pista"
+    },
+
+    {
+        pregunta: "¿Qué es un cilindro?",
+        opciones: [
+            "Conjunto de pistas alineadas",
+            "Motor",
+            "Cable",
+            "Sistema operativo"
+        ],
+        correcta: "Conjunto de pistas alineadas"
+    },
+
+    {
+        pregunta: "¿Qué tamaño físico suele tener un HDD de escritorio?",
+        opciones: [
+            "3,5 pulgadas",
+            "1 pulgada",
+            "10 pulgadas",
+            "0,5 pulgadas"
+        ],
+        correcta: "3,5 pulgadas"
+    },
+
+    {
+        pregunta: "¿Qué significa que un HDD sea no volátil?",
+        opciones: [
+            "Conserva datos sin energía",
+            "Pierde datos apagado",
+            "No tiene energía",
+            "Es inalámbrico"
+        ],
+        correcta: "Conserva datos sin energía"
+    },
+
+    {
+        pregunta: "¿Qué puede afectar físicamente a un HDD?",
+        opciones: [
+            "Golpes",
+            "WiFi",
+            "Bluetooth",
+            "Pantalla"
+        ],
+        correcta: "Golpes"
+    },
+
+    {
+        pregunta: "¿Qué almacena la información en un HDD?",
+        opciones: [
+            "Magnetismo",
+            "Luz",
+            "Calor",
+            "Sonido"
+        ],
+        correcta: "Magnetismo"
+    },
+
+    {
+        pregunta: "¿Qué tecnología usa un HDD?",
+        opciones: [
+            "Grabación magnética",
+            "Memoria Flash",
+            "Óptica",
+            "RAM"
+        ],
+        correcta: "Grabación magnética"
+    },
+
+    {
+        pregunta: "¿Qué sucede si un HDD pierde energía?",
+        opciones: [
+            "Conserva datos",
+            "Se borra",
+            "Explota",
+            "Pierde sectores"
+        ],
+        correcta: "Conserva datos"
+    },
+
+    {
+        pregunta: "¿Qué parte corresponde a cada cara del disco?",
+        opciones: [
+            "Cabezal",
+            "Sector",
+            "RAM",
+            "Cable"
+        ],
+        correcta: "Cabezal"
     }
 ];
 
 const preguntasHDDNormal = [
 
     {
-        pregunta:
-            "¿Qué componente gira dentro de un HDD?",
-
+        pregunta: "¿Qué es una partición?",
         opciones: [
-            "Platos",
+            "División lógica del disco",
+            "Cable",
             "Memoria RAM",
-            "GPU",
-            "Ventiladores"
+            "Sistema operativo"
         ],
-
-        respuesta:
-            "Platos"
+        correcta: "División lógica del disco"
     },
 
     {
-        pregunta:
-            "¿Qué velocidad se usa en HDD?",
-
+        pregunta: "¿Qué tecnología de partición es más antigua?",
         opciones: [
-            "RPM",
-            "FPS",
-            "GHz",
-            "Watts"
+            "MBR",
+            "GPT",
+            "NTFS",
+            "UEFI"
         ],
-
-        respuesta:
-            "RPM"
+        correcta: "MBR"
     },
 
     {
-        pregunta:
-            "¿Qué ocurre si un HDD recibe golpes fuertes?",
-
+        pregunta: "¿Qué sistema reemplaza a MBR?",
         opciones: [
-            "Puede dañarse",
-            "Se vuelve más rápido",
-            "Mejora el rendimiento",
-            "Nada"
+            "GPT",
+            "FAT16",
+            "BIOS",
+            "DOS"
         ],
+        correcta: "GPT"
+    },
 
-        respuesta:
-            "Puede dañarse"
+    {
+        pregunta: "¿Qué hace el formateo físico?",
+        opciones: [
+            "Divide pistas y sectores",
+            "Instala Windows",
+            "Aumenta velocidad",
+            "Cambia BIOS"
+        ],
+        correcta: "Divide pistas y sectores"
+    },
+
+    {
+        pregunta: "¿Qué hace el formateo lógico?",
+        opciones: [
+            "Crea sistema de archivos",
+            "Cambia procesador",
+            "Borra RAM",
+            "Instala drivers"
+        ],
+        correcta: "Crea sistema de archivos"
+    },
+
+    {
+        pregunta: "¿Qué es un clúster?",
+        opciones: [
+            "Conjunto de sectores",
+            "Tipo de RAM",
+            "Cabezal",
+            "Cable"
+        ],
+        correcta: "Conjunto de sectores"
+    },
+
+    {
+        pregunta: "¿Qué sistema de archivos usa Windows?",
+        opciones: [
+            "NTFS",
+            "EXT4",
+            "LINUX",
+            "HPFS"
+        ],
+        correcta: "NTFS"
+    },
+
+    {
+        pregunta: "¿Qué contiene una partición extendida?",
+        opciones: [
+            "Particiones lógicas",
+            "Memoria RAM",
+            "Procesadores",
+            "Drivers"
+        ],
+        correcta: "Particiones lógicas"
+    },
+
+    {
+        pregunta: "¿Qué realiza el POST?",
+        opciones: [
+            "Auto testeo inicial",
+            "Formateo",
+            "Partición",
+            "Overclock"
+        ],
+        correcta: "Auto testeo inicial"
+    },
+
+    {
+        pregunta: "¿Qué reemplaza al BIOS tradicional?",
+        opciones: [
+            "UEFI",
+            "FAT32",
+            "DOS",
+            "EXT3"
+        ],
+        correcta: "UEFI"
     }
 ];
 
 const preguntasHDDDificil = [
 
     {
-        pregunta:
-            "¿Qué significa RPM en un HDD?",
-
+        pregunta: "¿Cuál es la fórmula CHS?",
         opciones: [
-            "Revoluciones por minuto",
-            "Rendimiento por memoria",
-            "Respuesta principal mecánica",
-            "Rotación permanente magnética"
+            "C × H × S × 512",
+            "C + H + S",
+            "LBA × RPM",
+            "C / H / S"
         ],
-
-        respuesta:
-            "Revoluciones por minuto"
+        correcta: "C × H × S × 512"
     },
 
     {
-        pregunta:
-            "¿Qué problema puede sufrir un HDD por fragmentación?",
-
+        pregunta: "¿Qué significa LBA?",
         opciones: [
-            "Pérdida de velocidad",
-            "Más FPS",
-            "Mayor brillo",
-            "Más batería"
+            "Logical Block Address",
+            "Low Binary Access",
+            "Linear Boot Area",
+            "Logical BIOS Access"
         ],
-
-        respuesta:
-            "Pérdida de velocidad"
+        correcta: "Logical Block Address"
     },
 
     {
-        pregunta:
-            "¿Qué parte lee los datos en un HDD?",
-
+        pregunta: "¿Cuál es el máximo de clústers FAT16?",
         opciones: [
-            "Cabezal",
-            "GPU",
-            "Fuente",
-            "Cooler"
+            "65.535",
+            "32.768",
+            "512",
+            "128"
         ],
+        correcta: "65.535"
+    },
 
-        respuesta:
-            "Cabezal"
+    {
+        pregunta: "¿Qué produce un clúster pequeño?",
+        opciones: [
+            "Mayor fragmentación",
+            "Más velocidad",
+            "Menos capacidad",
+            "Menos sectores"
+        ],
+        correcta: "Mayor fragmentación"
+    },
+
+    {
+        pregunta: "Si un archivo ocupa 1 KB y el clúster es de 4 KB, ¿cuánto ocupa?",
+        opciones: [
+            "4 KB",
+            "1 KB",
+            "2 KB",
+            "8 KB"
+        ],
+        correcta: "4 KB"
     }
 ];
 
 const preguntasSSDFacil = [
 
     {
-        pregunta:
-            "¿Qué significa SSD?",
-
+        pregunta: "¿Qué significa SSD?",
         opciones: [
             "Solid State Drive",
-            "Secure Storage Disk",
-            "System Storage Device",
-            "Solid Storage Disk"
+            "Super Speed Disk",
+            "Static Storage Device",
+            "System Solid Disk"
         ],
-
-        respuesta:
-            "Solid State Drive"
+        correcta: "Solid State Drive"
     },
 
     {
-        pregunta:
-            "¿Cuál es más rápido?",
-
+        pregunta: "¿Qué tecnología usa un SSD?",
         opciones: [
-            "HDD",
-            "SSD",
-            "Ambos iguales",
-            "Depende del monitor"
+            "Memoria Flash",
+            "Platos magnéticos",
+            "Cintas",
+            "CD"
         ],
-
-        respuesta:
-            "SSD"
+        correcta: "Memoria Flash"
     },
 
     {
-        pregunta:
-            "¿Cuál consume menos energía?",
-
+        pregunta: "¿Cuál es una ventaja del SSD?",
         opciones: [
-            "HDD",
-            "SSD",
-            "Ambos consumen igual",
-            "Ninguno"
+            "Mayor velocidad",
+            "Más ruido",
+            "Más peso",
+            "Más vibración"
         ],
+        correcta: "Mayor velocidad"
+    },
 
-        respuesta:
-            "SSD"
+    {
+        pregunta: "¿Qué partes móviles tiene un SSD?",
+        opciones: [
+            "Ninguna",
+            "Dos",
+            "Tres",
+            "Una"
+        ],
+        correcta: "Ninguna"
+    },
+
+    {
+        pregunta: "¿Cómo es el consumo energético de un SSD?",
+        opciones: [
+            "Menor",
+            "Mayor",
+            "Igual",
+            "Variable"
+        ],
+        correcta: "Menor"
+    },
+
+    {
+        pregunta: "¿Qué ruido produce un SSD?",
+        opciones: [
+            "Silencioso",
+            "Mucho ruido",
+            "Ruido fuerte",
+            "Vibración"
+        ],
+        correcta: "Silencioso"
+    },
+
+    {
+        pregunta: "¿Qué formato de SSD es compacto?",
+        opciones: [
+            "M.2",
+            "IDE",
+            "DVD",
+            "Floppy"
+        ],
+        correcta: "M.2"
+    },
+
+    {
+        pregunta: "¿Qué dispositivo es más rápido?",
+        opciones: [
+            "SSD",
+            "HDD",
+            "DVD",
+            "Blu-ray"
+        ],
+        correcta: "SSD"
+    },
+
+    {
+        pregunta: "¿Qué almacena datos en un SSD?",
+        opciones: [
+            "Microchips",
+            "Platos",
+            "Cintas",
+            "Discos"
+        ],
+        correcta: "Microchips"
+    },
+
+    {
+        pregunta: "¿Qué afecta menos a un SSD?",
+        opciones: [
+            "Magnetismo",
+            "Golpes",
+            "Caídas",
+            "Vibraciones"
+        ],
+        correcta: "Magnetismo"
     }
 ];
 
 const preguntasSSDNormal = [
 
     {
-        pregunta:
-            "¿Qué ventaja tiene un SSD?",
-
+        pregunta: "¿Qué interfaz usan muchos SSD modernos?",
         opciones: [
-            "Mayor velocidad",
-            "Tiene discos giratorios",
-            "Consume más energía",
-            "Hace más ruido"
+            "SATA",
+            "VGA",
+            "PS/2",
+            "IDE antiguo"
         ],
-
-        respuesta:
-            "Mayor velocidad"
+        correcta: "SATA"
     },
 
     {
-        pregunta:
-            "¿Qué componente NO tiene un SSD?",
+        pregunta: "¿Qué ventaja tienen los SSD en notebooks?",
+        opciones: [
+            "Resisten vibraciones",
+            "Pesan más",
+            "Generan ruido",
+            "Tienen platos"
+        ],
+        correcta: "Resisten vibraciones"
+    },
 
+    {
+        pregunta: "¿Qué reemplaza un SSD frente a un HDD?",
         opciones: [
             "Partes mecánicas",
-            "Memoria",
-            "Circuitos",
-            "Controlador"
+            "Sistema operativo",
+            "Monitor",
+            "Fuente"
         ],
-
-        respuesta:
-            "Partes mecánicas"
+        correcta: "Partes mecánicas"
     },
 
     {
-        pregunta:
-            "¿Qué tipo de memoria usa un SSD?",
-
+        pregunta: "¿Qué hace un SSD más rápido?",
         opciones: [
-            "Flash",
-            "DDR2",
-            "CD",
+            "No tener partes móviles",
+            "Usar platos",
+            "Usar magnetismo",
+            "Tener ventiladores"
+        ],
+        correcta: "No tener partes móviles"
+    },
+
+    {
+        pregunta: "¿Qué componente controla operaciones en un SSD?",
+        opciones: [
+            "Controlador",
+            "Plato",
+            "Cabezal",
+            "Motor"
+        ],
+        correcta: "Controlador"
+    },
+
+    {
+        pregunta: "¿Qué tipo de almacenamiento usa el SSD?",
+        opciones: [
+            "Estado sólido",
+            "Magnético",
+            "Óptico",
+            "Analógico"
+        ],
+        correcta: "Estado sólido"
+    },
+
+    {
+        pregunta: "¿Qué tipo de acceso tiene un SSD?",
+        opciones: [
+            "Rápido",
+            "Mecánico",
+            "Lento",
+            "Manual"
+        ],
+        correcta: "Rápido"
+    },
+
+    {
+        pregunta: "¿Qué mejora principalmente un SSD?",
+        opciones: [
+            "Tiempo de carga",
+            "Calidad de imagen",
+            "Resolución",
+            "Audio"
+        ],
+        correcta: "Tiempo de carga"
+    },
+
+    {
+        pregunta: "¿Qué sucede al encender una PC con SSD?",
+        opciones: [
+            "Inicia más rápido",
+            "Se vuelve más pesada",
+            "Pierde datos",
+            "Hace ruido"
+        ],
+        correcta: "Inicia más rápido"
+    },
+
+    {
+        pregunta: "¿Qué disco es más resistente a vibraciones?",
+        opciones: [
+            "SSD",
+            "HDD",
+            "DVD",
             "Blu-ray"
         ],
-
-        respuesta:
-            "Flash"
+        correcta: "SSD"
     }
 ];
 
 const preguntasSSDDificil = [
 
     {
-        pregunta:
-            "¿Qué interfaz suele ser más rápida en SSD modernos?",
-
+        pregunta: "¿Qué almacena permanentemente los datos en un SSD?",
         opciones: [
-            "NVMe",
-            "IDE",
-            "VGA",
-            "USB 1.0"
+            "Memoria Flash",
+            "RAM",
+            "Cache L1",
+            "Procesador"
         ],
-
-        respuesta:
-            "NVMe"
+        correcta: "Memoria Flash"
     },
 
     {
-        pregunta:
-            "¿Qué tecnología usan los SSD para almacenar datos?",
-
+        pregunta: "¿Qué ventaja técnica tiene un SSD sobre un HDD?",
         opciones: [
-            "NAND Flash",
-            "Cinta magnética",
-            "DVD",
-            "Discos ópticos"
-        ],
-
-        respuesta:
-            "NAND Flash"
-    },
-
-    {
-        pregunta:
-            "¿Qué ventaja tiene NVMe sobre SATA?",
-
-        opciones: [
-            "Mayor velocidad",
+            "Menor tiempo de acceso",
             "Más ruido",
-            "Más peso",
-            "Menor capacidad"
+            "Más vibración",
+            "Mayor tamaño"
         ],
+        correcta: "Menor tiempo de acceso"
+    },
 
-        respuesta:
-            "Mayor velocidad"
+    {
+        pregunta: "¿Qué permite que un SSD sea silencioso?",
+        opciones: [
+            "No tiene motor",
+            "Tiene ventilador",
+            "Usa platos",
+            "Tiene cabezal"
+        ],
+        correcta: "No tiene motor"
+    },
+
+    {
+        pregunta: "¿Qué tecnología reemplaza a los platos magnéticos?",
+        opciones: [
+            "Memoria Flash",
+            "Sectores",
+            "Pistas",
+            "Cilindros"
+        ],
+        correcta: "Memoria Flash"
+    },
+
+    {
+        pregunta: "¿Qué característica mejora el rendimiento de un SSD?",
+        opciones: [
+            "Acceso instantáneo",
+            "Partes móviles",
+            "RPM",
+            "Magnetismo"
+        ],
+        correcta: "Acceso instantáneo"
     }
 ];
 
