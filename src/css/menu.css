@@ -1,8 +1,17 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #0f172a;
-    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #020617,
+        #0f172a,
+        #1e3a8a
+    );
+
+    color: #f8fafc;
+
+    min-height: 100vh;
 }
 
 .menu {
@@ -18,13 +27,22 @@ body {
 }
 
 .menu h1 {
-    font-size: 50px;
+    font-size: 55px;
     margin-bottom: 10px;
+
+    color: #f8fafc;
+
+    text-shadow:
+        0 0 10px rgba(59,130,246,0.7),
+        0 0 25px rgba(59,130,246,0.5);
 }
 
 .menu h2 {
-    color: #38bdf8;
+    color: #7dd3fc;
     margin-bottom: 20px;
+
+    text-shadow:
+        0 0 8px rgba(125,211,252,0.6);
 }
 
 .botones-menu {
@@ -35,19 +53,36 @@ body {
 
 .botones-menu button {
     padding: 15px 25px;
-    border: none;
-    border-radius: 10px;
 
-    background-color: #2563eb;
+    border: 1px solid rgba(255,255,255,0.15);
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
     color: white;
 
     font-size: 18px;
+    font-weight: bold;
+
     cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(37,99,235,0.4);
 
     transition: 0.3s;
 }
 
 .botones-menu button:hover {
-    background-color: #1d4ed8;
-    transform: scale(1.05);
+
+    transform:
+        scale(1.07)
+        translateY(-3px);
+
+    box-shadow:
+        0 0 25px rgba(59,130,246,0.8);
 }
